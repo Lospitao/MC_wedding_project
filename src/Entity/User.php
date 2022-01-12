@@ -14,6 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    const ADMINS = ['lauralospitao@gmail.com', 'monica_rf1@hotmail.com'];
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -124,5 +125,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+    public function isAdmin() {
+        return in_array($this->getEmail(), self::ADMINS);
     }
 }
