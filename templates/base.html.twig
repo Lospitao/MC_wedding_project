@@ -14,14 +14,30 @@
             <!-- Materialize icons -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
+            <!--Licorice google font-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Licorice&family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
         {% endblock %}
 
-        {% block javascripts %}
 
-        {% endblock %}
     </head>
     <body>
-        {% block body %}
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{ path('home') }}" class="avatar"><img src="{{ asset('/images/Logo1guay.png') }}" alt=""></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="nav_element" href="{{ path('home') }}">Inicio</a></li>
+                    <li><a class="nav_element" href="{{ path('wedding_lodging') }}">Alojamiento</a></li>
+                    <li><a class="nav_element" href="{{ path('wedding_schedule') }}">Horarios</a></li>
+                    <li><a class="nav_element" href="{{ path('wedding_pictures') }}">Fotos de nuestra boda</a></li>
+                    {% if app.user.isAdmin() %}
+                        <li><a class="nav_element" href="{{ path('wedding_attendants') }}">Listado Usuarios</a></li>
+                    {% endif %}
+                    <li><a class="nav_element" href="{{ path('contact_page') }}">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
             {% for message in app.flashes('success') %}
                 <div class="flash-success">
                     {{ message }}
@@ -37,6 +53,11 @@
                     {{ message }}
                 </div>
             {% endfor %}
+
+        {% block body %}
         {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
+
     </body>
 </html>
