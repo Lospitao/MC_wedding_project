@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+    {% block title %}<title>7 de mayo de 2022</title>{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/authorisation_screen.css') }}">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    <div class="screen">
+
+                <div id="puto_panel" class="card-panel white">
+                    <span class="black-text">Si has llegado hasta aquí es porque queremos compartir contigo un día muy
+                        especial: ¡nuestra boda! El día <strong>7 de mayo de 2022</strong> esperamos pasar un día excepcional
+                        con vosotros. En esta web encontraréis información sobre el enlace, entre otras cosas.
+                        Escribid el santo y seña y ya podréis entrar.
+                    </span>
+                        <!-- Password Recovery -->
+                        <form action="{{ path('authentication') }}"method=post>
+                            <label for="keyword" style="color:black">Santo y seña</label>
+                            <input type="text" name="keyword" id="keyword" class="form-control" required autofocus><br>
+                            <button class="btn btn-lg btn-primary float-right" id="submit_code_for_password_recovery" type="submit">
+                                Habla amigo y entra
+                            </button>
+
+                        </form>
+
+                </div>
+     </div>
+
+
+{% endblock %}
