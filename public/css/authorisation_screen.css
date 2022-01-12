@@ -1,6 +1,6 @@
 body {
     /* Aquí el origen de la imagen */
-    background-image: url(../images/DunasMasPalomas.jpg);
+    background-image: url(../images/perdidos_en_madrid.jpg);
 
     /* Fijar la imagen de fondo este vertical y
       horizontalmente y centrado */
@@ -22,7 +22,7 @@ body {
 
 @media only screen and (max-width: 767px) {
     body {
-        background-image: url(../images/DeMadridAlCielo.jpg);
+        background-image: url(../images/perdidos_en_madrid.jpg);
     }
 }
 .screen {
@@ -30,11 +30,11 @@ body {
 
 }
 .card-panel.white {
-    width: 30%;
-    margin-top: 280px;
-    margin-left: 1050px;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 700px;
     border-radius: 8px;
-    opacity: 0.4;
+    opacity: 0.8;
     background: white;
 }
 .flash-success {
